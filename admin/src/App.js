@@ -4,13 +4,14 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { productInputs, shopInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { Navigate} from "react-router-dom";
 import { productsColumns, shopsColumns, userColumns } from "./datatablesource";
+import NewShop from "./pages/new Shop/NewShop";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -56,8 +57,26 @@ function App() {
               </ProtectedRoute>} />
               <Route
                 path="new"
-                element={<ProtectedRoute> <New inputs={productInputs} title="Add New Shop" /></ProtectedRoute>}
+                element={<ProtectedRoute> 
+                  <NewShop inputs={shopInputs} title="Add New Shop" />
+                  </ProtectedRoute>}
               />
+            </Route>
+
+            <Route path = "products">
+              <Route index element = {<ProtectedRoute> <List columns={productsColumns} /> </ProtectedRoute>} />
+              <Route path = ":productId" element = {<ProtectedRoute>
+                  <Single />
+                  </ProtectedRoute>} />
+              <Route 
+              path="new"
+              element = {<ProtectedRoute>
+                <NewShop inputs = {productInputs} title = "Add New Product" />
+
+              </ProtectedRoute>}
+              />
+              
+              
             </Route>
           </Route>
         </Routes>
