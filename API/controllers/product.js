@@ -35,17 +35,22 @@ export const updateProduct = async (req, res,next) => {
     }
 
 }
-export const deleteProduct = async (req, res,next) => {
-    try{
-        await Products.findByIdAndDelete(req.params.id);
-       res.status(200).json("Hey you have deleted a product");
-       
-
-   }catch (err){
+export const deleteProduct = async (req, res, next) => {
+    const ShopId = req.params.shopid;
+    try {
+      await Products.findByIdAndDelete(req.params.id);
+      try {
+        await Shops.findByIdAndUpdate(ShopId, {
+          $pull: { products: req.params.id },
+        });
+      } catch (err) {
         next(err);
+      }
+      res.status(200).json("Product has been deleted.");
+    } catch (err) {
+      next(err);
     }
-
-}
+  };
 
 export const getProduct = async (req, res,next) => {
     try{

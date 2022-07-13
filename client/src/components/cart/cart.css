@@ -1,0 +1,68 @@
+.cart{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0 ,0 , 0.418 );
+    position :fixed;
+    top:0;
+    left:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.cContainer{
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    background: rgba( 0, 0, 0, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.rClose{
+    position:absolute;
+    top:0;
+    right:0;
+    cursor: pointer;
+}
+.cItem{
+    display:flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    
+    color: white;
+
+}
+.cItemInfo{
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+
+}
+.cName{
+    font-weight: 500;
+}
+
+.cDesc{
+    font-weight: 12;
+}
+
+.cPrice{
+    font-weight: 500;
+}
+
+.cButton{
+    border:none;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width:100%;
+    margin-top: 20px;
+
+}

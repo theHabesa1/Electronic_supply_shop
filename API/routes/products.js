@@ -8,7 +8,7 @@ router.post("/:shopid",verifyAdmin, createProduct);
 //UPDATE
 router.put("/:id",verifyAdmin, updateProduct);
  //DELETE
-router.delete("/:id",verifyAdmin, deleteProduct);
+router.delete("/:id/:shopId",verifyAdmin, deleteProduct);
 //GET
 router.get("/:id", getProduct);
 //get all

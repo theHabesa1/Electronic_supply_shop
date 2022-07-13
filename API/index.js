@@ -6,7 +6,7 @@ import usersRoute from "./routes/users.js";
 import shopsRoute from "./routes/shops.js";
 import productsRoute from "./routes/products.js";
 import cookieParser from "cookie-parser";
-
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -34,6 +34,7 @@ app.get("/",(req,res)=>{
 })
 
 // middleware
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/auth", authRoute);

@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 
-
-
 const ProductSchema = new mongoose.Schema({
     pname: {
         type: String,
@@ -17,7 +15,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-   proNumbers:[{number:Number,onsaleDate:{type:[Date]}}],
+   proNumbers:[{number:Number, onsaleDate:{type:[Date]}}],
 
 } ,{timestamps:true});
 export default mongoose.model("Product", ProductSchema);
