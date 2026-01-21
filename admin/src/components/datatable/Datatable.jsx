@@ -1,6 +1,5 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState ,useEffect} from "react";
 import useFetch from "../../hooks/useFetch";
@@ -11,7 +10,7 @@ const Datatable = ({columns}) => {
   const [list, setList] = useState();
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  const {data,loading,error} = useFetch(`/${path}`);
+  const {data} = useFetch(`/${path}`);
   
   useEffect(() => {
     setList(data)

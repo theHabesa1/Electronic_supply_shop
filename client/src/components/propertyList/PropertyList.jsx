@@ -3,7 +3,7 @@ import "./propertyList.css";
 
 
 const PropertyList = () => {
-  const {data, loading, error} = useFetch("/shops/countByType");
+  const {data, loading} = useFetch("/shops/countByType");
   const images = [
     "https://pub-static.fotor.com/assets/projects/pages/8a67c885-d571-416c-bbec-4db96a77b5d2/orange-electronics-shop-logo-a3dc77e4-b512-4f30-bd77-82cedc42b3f4.jpg",
 

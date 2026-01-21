@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css";
 import {useState} from "react";
-import { createContext,useEffect,useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
