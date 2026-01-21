@@ -13,7 +13,6 @@ import {
 import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useLocation, useNavigate } from "react-router-dom";
-import SearchItem from "../../components/searchItem/SearchItem";
 import { AuthContext } from "../../context/AuthContext";
 import { Cart } from "../../components/cart/Cart";
 
@@ -25,7 +24,7 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
   
 
-  const {data,loading,error} = useFetch(`/shops/find/${id}`);
+  const {data,loading} = useFetch(`/shops/find/${id}`);
 
   const {user} = useContext(AuthContext);
   const navigate = useNavigate();

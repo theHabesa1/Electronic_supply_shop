@@ -5,7 +5,7 @@ import "./cart.css";
 import useFetch from '../../hooks/useFetch.js';
 
 export const Cart = ({setOpen, shopId}) => {
-    const {data,loading,error} = useFetch( `/shops/product/${shopId}`);
+    const {data} = useFetch( `/shops/product/${shopId}`);
     const [selectedProduct, setSelectedProduct] = useState([]);
     const handelSelect=(e)=>{
         const checked = e.target.checked;

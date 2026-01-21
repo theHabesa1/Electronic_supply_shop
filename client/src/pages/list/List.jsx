@@ -3,18 +3,14 @@ import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
-import  useFetch  from "../../hooks/useFetch.js";
+import useFetch from "../../hooks/useFetch.js";
 
 const List = () => {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
-  const [date, setDate] = useState(location.state.date);
-  const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state.options);
-  const {data,loading,error,refetch} = useFetch(`/shops?city=${destination}`)
+  const [destination] = useState(location.state.destination);
+  const [options] = useState(location.state.options);
+  const {data,loading} = useFetch(`/shops?city=${destination}`)
 
   return (
     <div>
